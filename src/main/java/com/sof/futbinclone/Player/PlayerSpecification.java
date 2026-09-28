@@ -103,6 +103,14 @@ public class PlayerSpecification {
                 predicates.add(cb.equal(root.get("cardType"), criteria.getCardType()));
             }
 
+            if(criteria.getPreferredFoot() != null) {
+                predicates.add(cb.equal(root.get("preferredFoot"), criteria.getPreferredFoot()));
+            }
+
+            if(criteria.getGender() != null) {
+                predicates.add(cb.equal(root.get("gender"), criteria.getGender()));
+            }
+
             return cb.and(predicates.toArray(new Predicate[predicates.size()]));
             //return type for criteria builder addition is varargs of predicates, cannot take list so convert into array which is allowed
 

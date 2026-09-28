@@ -11,15 +11,14 @@ import jakarta.validation.constraints.Max;
 public class PlayerSearchCriteria { //holds all filters that a user can choose from
 
     private Position position;
-
     private Team team;
     private League league;
     private String nation;
+    private Gender gender;
+    private PreferredFoot preferredFoot;
 
     private SortBy sortBy = SortBy.RATING;
-
     private SortDirection sortDirection = SortDirection.DESC;
-
 
     @Min(1) //minimum stat of 1
     @Max(99) //maximum stat of 99

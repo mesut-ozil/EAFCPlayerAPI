@@ -10,8 +10,11 @@ public class PlayerResponse {
     private Long id;
     private String name;
     private String nation;
+
     private Position position;
     private CardType cardType;
+    private PreferredFoot preferredFoot;
+    private Gender gender;
 
     private long price;
     private int rating;
@@ -48,5 +51,7 @@ public class PlayerResponse {
         this.physical = player.getPhysical();
         this.sm = player.getSm();
         this.wf = player.getWf();
+        this.preferredFoot = player.getPreferredFoot();
+        this.gender = player.getGender();
     }
 }

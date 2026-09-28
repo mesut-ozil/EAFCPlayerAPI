@@ -12,8 +12,9 @@ public class PlayerRequest {
     private String nation;
 
     private CardType cardType;
-
     private Position position;
+    private PreferredFoot preferredFoot;
+    private Gender gender;
 
     private long price;
     private int rating;

@@ -23,6 +23,12 @@ public class Player {
     @Enumerated(EnumType.STRING) //tells hibernate to store position as a string rather than a smallint
     private Position position;
 
+    @Enumerated(EnumType.STRING)
+    private PreferredFoot preferredFoot;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
     private long price;
     private int rating;
 
@@ -41,7 +47,7 @@ public class Player {
 
     public Player() {} //empty constructor recommended so hibernate can create entities from database
 
-    public Player(String name, String nation, CardType cardType, Position position, long price, int rating, Team team, int pace, int shooting, int passing, int dribbling, int defending, int physical, int sm, int wf) {
+    public Player(String name, String nation, CardType cardType, Position position, long price, int rating, Team team, int pace, int shooting, int passing, int dribbling, int defending, int physical, int sm, int wf, PreferredFoot preferredFoot, Gender gender) {
         this.name = name;
         this.nation = nation;
         this.cardType = cardType;
@@ -57,6 +63,8 @@ public class Player {
         this.physical = physical;
         this.sm = sm;
         this.wf = wf;
+        this.preferredFoot = preferredFoot;
+        this.gender = gender;
     }
 
     public Player(PlayerRequest request) {
@@ -74,5 +82,7 @@ public class Player {
         this.sm = request.getSm();
         this.wf = request.getWf();
         this.nation = request.getNation();
+        this.preferredFoot = request.getPreferredFoot();
+        this.gender = request.getGender();
     }
 }
